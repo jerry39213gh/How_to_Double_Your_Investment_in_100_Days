@@ -10,7 +10,7 @@ if __name__ == "__main__":
     pre = pd.read_csv('pre.csv')
     df.set_index('created_at', inplace=True)
     pre.set_index('created_at', inplace=True)
-    df = df['arbitrage'][:2000]
+    df = df['arbitrage']
     pre = pre['arbitrage']
     res = []
     (gain, num_trades, res) = make_money(df, pre)
