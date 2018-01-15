@@ -6,7 +6,7 @@ Data
 
 The data can be scraped from your choice of cryptocurrency exchanges online, depending on which ones you want to work with. By dividing the price of exchange A by exchange B, we can get the percentage difference of the going price of your choice of cryptocurrency. Below is an example of the time series data from September.    
 
-![alt text](https://github.com/jerry39213gh/How_to_Double_Your_Investment_in_100_Days/blob/master/illustration.pdf)
+![Illustration](https://github.com/jerry39213gh/How_to_Double_Your_Investment_in_100_Days/blob/master/illustration.pdf)
 
 
 Please note:
