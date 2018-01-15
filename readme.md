@@ -4,7 +4,7 @@ Cryptocurrency has been a hot topic among the young investors for many months. T
 
 ## Data
 
-The data can be scraped from your choice of cryptocurrency exchanges online, depending on the exchanges you want to work with. The price spread can be calcualted by dividing the price of exchange A by exchange B. An example of the cleaned data set can be found ![Here](https://github.com/jerry39213gh/How_to_Double_Your_Investment_in_100_Days/blob/master/main.csv). To give you a sense of what the algorithm is doing, ![here](https://github.com/jerry39213gh/How_to_Double_Your_Investment_in_100_Days/blob/master/illustration.pdf) is an illustration of what the algorithm is doing. The red dots represent the point of buying from Market A and selling into Market B, and the green dots represent the opposite. Please note.
+The data can be scraped from your choice of cryptocurrency exchanges online, depending on the exchanges you want to work with. The price spread can be calcualted by dividing the price of exchange A by exchange B. An example of the price differentials between the US and Korea in September of last year can be found ![here](https://github.com/jerry39213gh/How_to_Double_Your_Investment_in_100_Days/blob/master/main.csv). To give you a sense of what the algorithm is doing, ![here](https://github.com/jerry39213gh/How_to_Double_Your_Investment_in_100_Days/blob/master/illustration.pdf) is an illustration of the algorithm in action. The red dots represent the action point to buy in the US and sell in Korea, and the green dots are the opposite.
 
 ### Please note:
 
