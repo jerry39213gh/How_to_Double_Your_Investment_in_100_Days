@@ -4,7 +4,7 @@ Cryptocurrency has been a hot topic among the young investors for many months. T
 
 ## Data
 
-The data can be scraped from your choice of cryptocurrency exchanges online, depending on the exchanges you want to work with. The price spread can be calcualted by dividing the price of exchange A by exchange B.   ![Here](https://github.com/jerry39213gh/How_to_Double_Your_Investment_in_100_Days/blob/master/illustration.pdf) is an example of the time series data from September.    
+The data can be scraped from your choice of cryptocurrency exchanges online, depending on the exchanges you want to work with. The price spread can be calcualted by dividing the price of exchange A by exchange B. An example of the cleaned data set can be found ![Here](https://github.com/jerry39213gh/How_to_Double_Your_Investment_in_100_Days/blob/master/main.csv). To give you a sense of what the algorithm is doing, ![here](https://github.com/jerry39213gh/How_to_Double_Your_Investment_in_100_Days/blob/master/illustration.pdf) is an illustration of what the algorithm is doing. The red dots represent the point of buying from Market A and selling into Market B, and the green dots represent the opposite. Please note.
 
 ### Please note:
 
