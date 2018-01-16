@@ -49,5 +49,5 @@ As mentioned above, recursive models may give more accurate predictions of the r
 
 ## Acknowledgment
 
-Jesse wrote the docs and was responsible for handling the data and creating the algorithms
-John set up the trading platforms and built the trading bot (code not included in this repo)  
+- Jesse wrote this document and was responsible for handling the data and creating the algorithms
+- John set up the trading platforms and built the trading bot (code not included in this repo)  
