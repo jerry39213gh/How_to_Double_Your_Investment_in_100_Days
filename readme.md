@@ -9,10 +9,10 @@ The data can be scraped from your choice of cryptocurrency exchanges online, dep
 ### Please note:
   
 - The calculations here do not take transaction fees into consideration. While the transaction fees are fairly negligible for some exchanges, they can be significant for others. It is important to take this into consideration when you are shopping for the right exchanges to work with. 
-- The calculations here assume the transactions are immediate, which is not the case in real life. However, the transcations for the exchanges we are working with usaully only takes 10-15 minutes, so it's not a big concern.
-- Even though we are using BitCoin for this repo, the strategy works for other coins as well. Transaction times and trading volumes vary depending on your choice of coin and your choice of exchange. Keep in mind that exchanges with low volumes are more prone to slip
+- The calculations here assume the transactions are immediate, which is not the case in real life. However, the transcations for the exchanges we are working with usually only takes 10-15 minutes, so it's not a big concern.
+- Even though we are using Bitcoin for this repo, the strategy works for other coins as well. Transaction times and trading volumes vary depending on your choice of coin and your choice of exchange. Keep in mind that exchanges with low volumes are more prone to slippage.
 - The calculations here do not take bid-ask spread into consideration. The spread between exchanges are typically a lot higher, so this is not really an issue.   
-- As of late November when BitCoin hit $10,000, the crypto craze has generated so much noise that it has become harder to predict the pattern of the spread. Minor modifications and more human judgment are needed to maximize the gains until the pattern stablizes again.
+- As of late November when Bitcoin hit $10,000, the crypto craze has generated so much noise that it has become harder to predict the pattern of the spread. Minor modifications and more human judgment are needed to maximize the gains until the pattern stablizes again.
 
 ## Model Selection, Validation, and Parameter Tuning
 
@@ -33,7 +33,7 @@ Different models can identify different trading opportunities. For example, the 
 
 ### ARIMA
 
-The data was decomposed to check for trend and seasonality, but no pattern was observed. This makes sense as we would expect the prices from the two markets to be moving somewhat together, making the spread relatively stable. With that, we decided to use the data assuming no trend or seasonality. The first difference was then taken to create a new series. Box Cox test was used to show that the series was homoscedastic, and Dickey Fuller test was used to show that the series was stationary. Using the conjunction of ACF plot, PACF plot, and auto select ARIMA, the final candidate model was selected. With the ARIMA selected model, we can feed in 2 days of data to predict 2 days ahead, and use the confidence intervals to determine our trading targets.
+The data was decomposed to check for trend and seasonality, but no patterns were observed. This made sense as we would expect the prices from the two markets to be moving somewhat together, making the spread relatively stable. With that, we decided to use the data assuming no trend or seasonality. The first differences were then taken to create a new series. Box Cox test was used to show that the series was homoscedastic, and Dickey Fuller test was used to show that the series was stationary. Using the combination of ACF plot, PACF plot, and auto select ARIMA, the final candidate model was selected. With the ARIMA selected model, we can feed in 2 days of data to predict 2 days ahead, and use the confidence intervals to determine our trading targets.
 
 ### Random Forest
 
@@ -41,7 +41,7 @@ Take 2 days of data to predict the range of the movement in the next 2 days with
 
 ## Model Validation
 
-The individual models were first validated using the usual time series "ladder" break down using 4 folds of the August data, but then we realized that using only two days of prior data seemed to be good enough. The individual models were tuned using the accuracy of the predictions, then the decision algorithm was tuned using the highest return of the August data. The data in September was going to be the test set, but the algorithm was implemented early due to the high opportunity cost. We did not implement the Random Forest algorithm in September, but played around with it and decided to add it to aid our trading decision in October. The model fitting steps were not as rigorous as we'd like to, but post hoc analysese showed that the parameters we selected worked pretty well for the following months as well.       
+The individual models were first validated using the usual time series "ladder" break down using 4 folds of the August data, then we realized that using only two days of prior data seemed to be good enough. The individual models were tuned using the accuracy of the predictions, then the decision algorithm was tuned using the highest return of the August data. The data in September was going to be the test set, but the algorithm was implemented early due to the high opportunity cost. We did not implement the Random Forest algorithm in September, but played around with it and decided to add it to aid our trading decision in October. The model fitting steps were not as rigorous as we'd like to, but post hoc analysese showed that the parameters we selected worked pretty well for the following months.       
 
 ## Future Directions
 
