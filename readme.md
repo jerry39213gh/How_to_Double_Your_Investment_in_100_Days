@@ -9,7 +9,7 @@ The data can be scraped from your choice of cryptocurrency exchanges online, dep
 ### Please note:
   
 - The calculations here do not take transaction fees into consideration. While the transaction fees are fairly negligible for some exchanges, they can be significant for others. It is important to take this into consideration when you are shopping for the right exchanges to work with. 
-- The calculations here assume the transactions are immediate, which is not the case in real life. However, it typically only takes 10-15 minutes for the exchanges we are working with, so it's not a big concern.
+- The calculations here assume the transactions are immediate, which is not the case in real life. However, the transcations for the exchanges we are working with usaully only takes 10-15 minutes, so it's not a big concern.
 - Even though we are using BitCoin for this repo, the strategy works for other coins as well. Transaction times and trading volumes vary depending on your choice of coin and your choice of exchange. Keep in mind that exchanges with low volumes are more prone to slip
 - The calculations here do not take bid-ask spread into consideration. The spread between exchanges are typically a lot higher, so this is not really an issue.   
 - As of late November when BitCoin hit $10,000, the crypto craze has generated so much noise that it has become harder to predict the pattern of the spread. Minor modifications and more human judgment are needed to maximize the gains until the pattern stablizes again.
@@ -29,7 +29,7 @@ If a trade is made at A% (high) and the spread goes up for another 5%, bail and 
 
 ### Other notes
 
-Different models can identify additional trading opportunities. For example, the Random Forest algorithm identifed a few additional opportunities between 9/5 - 9/7 and between 9/24 - 9/26 when the ARIMA algorithm was idle. Combining multiple models together can improve the trading results (code not shown in this repo). 
+Different models can identify different trading opportunities. For example, the Random Forest algorithm identifed a few additional opportunities between 9/5 - 9/7 and between 9/24 - 9/26 when the ARIMA algorithm was idle. Combining multiple models together can improve the trading results (code not shown in this repo). 
 
 ### ARIMA
 
@@ -37,18 +37,17 @@ The data was decomposed to check for trend and seasonality, but no pattern was o
 
 ### Random Forest
 
-Take 2 days of data to predict the range of the movement in the next 2 days with 500 trees. The random forest algorithm doens't seem to work as well as ARIMA, but is a good model to complement the base model to identify additional opportunities.
+Take 2 days of data to predict the range of the movement in the next 2 days with 500 trees and a few other specifications. The random forest algorithm doens't seem to work as well as ARIMA, but is a good model to complement the base model to identify additional opportunities.
 
 ## Model Validation
 
-The individual models were first validated using the usual time series "ladder" break down using 4 folds, but then we realized that   
-The September data was broken down 75% 25% in the usual time series 4 fold cross validation way, using the most recent quarter as the validation data and the rest as the training data. The top candidate was implemented immediately since there's money to be made without a possible loss, but the top 3 scoring candidates were run in parallel as an ad hoc test set to select the top performing model. Technically, a multi-armed bandit approach could be used here to further optimize the result, but it was ruled out due to the extra effort of implementation. *update results*    
+The individual models were first validated using the usual time series "ladder" break down using 4 folds of the August data, but then we realized that using only two days of prior data seemed to be good enough. The individual models were tuned using the accuracy of the predictions, then the decision algorithm was tuned using the highest return of the August data. The data in September was going to be the test set, but the algorithm was implemented early due to the high opportunity cost. We did not implement the Random Forest algorithm in September, but played around with it and decided to add it to aid our trading decision in October. The model fitting steps were not as rigorous as we'd like to, but post hoc analysese showed that the parameters we selected worked pretty well for the following months as well.       
 
 ## Future Directions
 
-As mentioned above, recursive models may give more accurate predictions of the results.  We can also consider ensembling the models in some ways to improve the results. Considering that the opportunity may not be around forever and the current model is good enough, no further actions will be taken at the moment.
+As mentioned above, recursive models may give more accurate predictions of the results.  We can also consider ensembling the models in other ways to improve the results. Considering that the opportunity may not be around forever and the current model is good enough, no further actions will be taken at the moment.
 
 ## Acknowledgment
 
-Jesse wrote this document and was responsible for handling the data and the trading algorithm
-John set up the trading platforms and build the trading bot  
+Jesse wrote the docs and was responsible for handling the data and creating the algorithms
+John set up the trading platforms and built the trading bot (code not included in this repo)  
