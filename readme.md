@@ -8,7 +8,7 @@ The data can be scraped from your choice of cryptocurrency exchanges online, dep
 
 ### Please note:
   
-- The calculations here do not take transaction fees into consideration. While the transaction fees are fairly negligible for some exchanges, they can be significant for others. It is important to take this into consideration when you are shopping for the right exchanges to work with. 
+- The calculations here do not take transaction fees into consideration. While the transaction fees are fairly negligible for some exchanges, they can be significant for others. It is important to take this into consideration when you are shopping for the right exchanges to work with. The simulation with transaction fees included reduces the gains by about 5% per month.   
 - The calculations here assume the transactions are immediate, which is not the case in real life. However, the transcations for the exchanges we are working with usually only takes 10-15 minutes, so it's not a big concern.
 - Even though we are using Bitcoin as an example for this repo, the strategy works for other coins as well. Transaction times and trading volumes vary depending on your choice of coin and your choice of exchange. Keep in mind that exchanges with low volumes are more prone to slippage.
 - The calculations here do not take bid-ask spread into consideration. The spread between exchanges are typically a lot higher, so this is not really an issue.   
@@ -16,7 +16,7 @@ The data can be scraped from your choice of cryptocurrency exchanges online, dep
 
 ## Model Selection, Validation, and Parameter Tuning
 
-Random forest and ARIMA were selected for the model due to the relative ease of implementation. The preliminary results were also proven to be promising. Recurrent neural networks may be added once I get a better grasp of the topic. Other recursive models may also be considered.
+Random forest and ARIMA were selected since the preliminary results were proven to be promising. 
 
 ### The decision algorithm:
 
@@ -41,7 +41,7 @@ Take 2 days of data to predict the range of the movement in the next 2 days with
 
 ## Model Validation
 
-The individual models were first validated using the usual time series "ladder" break down using 4 folds of the August data, then we realized that using only two days of prior data seemed to be good enough. The individual models were tuned using the accuracy of the predictions, then the decision algorithm was tuned using the highest return of the August data. The data in September was going to be the test set, but the algorithm was implemented early due to the high opportunity cost. We did not implement the Random Forest algorithm in September, but played around with it and decided to add it to aid our trading decision in October. The model fitting steps were not as rigorous as we'd like to, but post hoc analysese showed that the parameters we selected worked pretty well for the following months.       
+The individual models were first validated using the usual time series "ladder" break down using 4 folds of the August data. The individual models were tuned using the accuracy of the predictions, then the decision algorithm was tuned using the highest return of the August data. The data in September was going to be the test set, but the algorithm was implemented early due to the high opportunity cost. We did not implement the Random Forest algorithm in September, but played around with it and decided to add it to aid our trading decision in October. The model fitting steps were not as rigorous as we'd like to, but post hoc analysese showed that the parameters we selected worked pretty well for the following months.       
 
 ## Future Directions
 
