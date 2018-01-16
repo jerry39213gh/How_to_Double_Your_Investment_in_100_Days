@@ -10,7 +10,7 @@ The data can be scraped from your choice of cryptocurrency exchanges online, dep
   
 - The calculations here do not take transaction fees into consideration. While the transaction fees are fairly negligible for some exchanges, they can be significant for others. It is important to take this into consideration when you are shopping for the right exchanges to work with. 
 - The calculations here assume the transactions are immediate, which is not the case in real life. However, the transcations for the exchanges we are working with usually only takes 10-15 minutes, so it's not a big concern.
-- Even though we are using Bitcoin for this repo, the strategy works for other coins as well. Transaction times and trading volumes vary depending on your choice of coin and your choice of exchange. Keep in mind that exchanges with low volumes are more prone to slippage.
+- Even though we are using Bitcoin as an example for this repo, the strategy works for other coins as well. Transaction times and trading volumes vary depending on your choice of coin and your choice of exchange. Keep in mind that exchanges with low volumes are more prone to slippage.
 - The calculations here do not take bid-ask spread into consideration. The spread between exchanges are typically a lot higher, so this is not really an issue.   
 - As of late November when Bitcoin hit $10,000, the crypto craze has generated so much noise that it has become harder to predict the pattern of the spread. Minor modifications and more human judgment are needed to maximize the gains until the pattern stablizes again.
 
